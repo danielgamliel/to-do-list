@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import TaskCreate from './components/TaskCreate';
+import TaskList from './components/TaskList';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  const editTaskById = (id, newTitle) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, title: newTitle };
+      }
+      return task;
+    });
+
+    setTasks(updatedTasks);
+  };
+
+  const deleteTaskById = (id) => {
+    const updatedTasks = tasks.filter((task) => {
+      return task.id !== id;
+    });
+
+    setTasks(updatedTasks);
+  };
+
+  const createTask = (title, category) => {
+    const updatedTasks = [
+      ...tasks,
+      {
+        id: Math.round(Math.random() * 9999),
+        title,
+        category
+      },
+    ];
+    setTasks(updatedTasks);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>To do List</h1>
+      <TaskList onEdit={editTaskById} tasks={tasks} onDelete={deleteTaskById} />
+      <TaskCreate onCreate={createTask} />
     </div>
   );
 }
