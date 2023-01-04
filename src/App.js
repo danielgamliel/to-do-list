@@ -5,44 +5,44 @@ import TaskList from './components/TaskList';
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  const editTaskById = (id, newTitle) => {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === id) {
-        return { ...task, title: newTitle };
-      }
-      return task;
-    });
-
-    setTasks(updatedTasks);
-  };
+  const editTaskById = (id, newTitle, newCategory) => {
+    setTasks((prevTasks) => prevTasks.map((task) => (task.id === id) ? { ...task, title: newTitle, category: newCategory } : task ));
+  }
 
   const deleteTaskById = (id) => {
     const updatedTasks = tasks.filter((task) => {
       return task.id !== id;
     });
 
-    setTasks(updatedTasks);
+    setTasks((prevTasks)=> updatedTasks);
   };
 
   const createTask = (title, category) => {
     const updatedTasks = [
       ...tasks,
       {
-        id: Math.round(Math.random() * 9999),
+        id: new Date().getTime(),
         title,
         category
       },
     ];
-    setTasks(updatedTasks);
+    setTasks((prevTasks)=> updatedTasks);
+    
   };
 
   return (
     <div className="app">
       <h1>To do List</h1>
-      <TaskList onEdit={editTaskById} tasks={tasks} onDelete={deleteTaskById} />
-      <TaskCreate onCreate={createTask} />
+      <TaskList  onEdit={editTaskById} tasks={tasks} onDelete={deleteTaskById} />
+      <TaskCreate onCreate={createTask} onSubmitEdit={editTaskById} />
     </div>
   );
 }
 
 export default App;
+
+
+//setState with prev
+//ID -time stamp
+// component for edit and create with validation
+// uncontrolled inputs useRef
