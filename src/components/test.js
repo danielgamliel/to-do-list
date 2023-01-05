@@ -1,3 +1,5 @@
+// skip push ***
+
 const Details = ({task}) => {
 
     const text = !!task ? 'Update' : 'Create';
@@ -24,3 +26,12 @@ const Form = ({children}) => {
     )
 }
 
+/*
+  git status // shows the updated/deleted/created files ready to stage
+  git add . // stage all updated/deleted/created files
+  git commit -m "your commit msg here" // commit your files and ready to push
+  git push // pushes your commit(code) to github
+  
+
+  changes (add)=> stage (commit)=> commit (push)=> push
+*/
