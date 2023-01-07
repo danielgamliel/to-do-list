@@ -35,3 +35,13 @@ const Form = ({children}) => {
 
   changes (add)=> stage (commit)=> commit (push)=> push
 */
+
+
+
+// brench - style 
+//css reset , box sizing- border box
+// media queary
+//animation
+//flex/grid
+// responsive 720 - list one at row , then 3, add stack in the bottom
+// html tags choose
