@@ -11,15 +11,15 @@ function TaskShow({ task, onDelete, onEdit }) {
     setShowEdit((prev)=>!prev);
   };
 
-  let content = <div><h3>{task.title}</h3> <h5>({task.category})</h5></div>;
+  let content = <><h3 >{task.title}</h3> <h5>({task.category})</h5></>;
   if (showEdit) content = <TaskCreate action={'edit'} onEdit={handleSubmit} task={task} />
 
   return (
     <div className="task-show" >
       <div >{content}</div>
       <div>
-        <button className="edit"  onClick={handleEditClick}>Edit</button>
-        <button className="delete" onClick={handleDeleteClick}>Delete</button>
+        <button className="edit-btn"  onClick={handleEditClick}>edit</button>
+        <button className="delete-btn" onClick={handleDeleteClick}>X</button>
       </div>
     </div>
   );

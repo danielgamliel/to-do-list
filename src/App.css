@@ -1,28 +1,16 @@
 .app {
-    /* background-color: blue; */
     height: 800px;
 }
 
-
 .task-list {
-    /*grid*/
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 15px;
     row-gap: 20px;
-
-    /*flex*/
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; */
-    /* flex-wrap: wrap; */
-    /* max-width: 1024px */
 }
 
 .task-create {
-
     width: 50%;
-    background-color: aquamarine;
     padding: 3px;
     position: fixed;
     left: 50%;
@@ -35,12 +23,11 @@
     height: 35px;
     display: flex;
     flex-direction: row;
-    background-color: blueviolet;
     justify-content: space-evenly;
     box-sizing: border-box;
-
-
-
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: bisque;
 }
 
 @media (max-width:720px) {
@@ -54,78 +41,64 @@
 
 .task-show {
     border: 1px solid gray;
-    /* flex: 1; */
+    flex: 1;
     width: 300px;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 20px;
-
+    background-color: azure;
+    margin-bottom: 25%;
+    animation: fadeIn 1.3s;
+    position: relative;
 }
 
-/* .task-show {
-    align-self: flex-start;
-    box-shadow: 0 0 4px #c8c8c8;
-    position: relative
-} */
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
 
 .task-show h3 {
     font-size: 24px
 }
 
 
-
-
-
-
-
-
-
-/* .task-show .actions {
-    margin-left: 10px;
-    position: absolute;
-} */
-
-
-/* .task-show button {
-    margin-right: 5px
-} */
-
-/* 
-.task-show .edit {
-    /background-color: hsla(0, 0%, 4%, .2); 
-    border: none;
-     border-radius: 9999px; 
-    cursor: pointer;
-    display: inline-block;
-    flex-grow: 0;
-    flex-shrink: 0;
-    font-size: 0;
-    height: 20px;
-    max-height: 20px;
-    max-width: 20px;
-    min-height: 20px;
-    min-width: 20px;
-    outline: none;
-    pointer-events: auto;
-    position: relative;
-    vertical-align: top;
-    width: 20px
-} 
-
-
- .task-show .edit:after {
+.edit-btn {
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
     color: #fff;
-    content: "✎";
-    display: block;
-    font-size: 15px;
-    font-weight: 700;
-    height: 20px;
-    left: 50%;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    padding: 5px 8px;
+    text-align: center;
+    user-select: none;
+    box-sizing: border-box;
+
+}
+
+.delete-btn {
+    background-image: linear-gradient(#eb7a7a, #ff0000);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .9em;
+    padding: 2px 5px;
+    text-align: center;
+    box-sizing: border-box;
     position: absolute;
-    top: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) rotate(20deg);
-    transform: translateX(-50%) translateY(-50%) rotate(20deg);
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-    width: 20px;
-    z-index: 10
-} */
+    top: 5px;
+    right: 5px;
+
+}
