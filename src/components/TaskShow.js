@@ -16,9 +16,9 @@ function TaskShow({ task, onDelete, onEdit }) {
 
   return (
     <div className="task-show" >
-      <div className='task-class'>{content}</div>
-      <div className="actions">
-        <button className="edit" onClick={handleEditClick}>Edit</button>
+      <div >{content}</div>
+      <div>
+        <button className="edit"  onClick={handleEditClick}>Edit</button>
         <button className="delete" onClick={handleDeleteClick}>Delete</button>
       </div>
     </div>

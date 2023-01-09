@@ -38,10 +38,13 @@ const Form = ({children}) => {
 
 
 
-// brench - style 
+// brench - style  ✔✔
 //css reset , box sizing- border box
+//stack the create copmonent - fixed ✔✔
+//flex/grid
+// responsive 720 - list one at row , then 3, add stack in the bottom ✔✔
+// html tags- what to choose
 // media queary
 //animation
-//flex/grid
-// responsive 720 - list one at row , then 3, add stack in the bottom
-// html tags choose
+
+//pull request

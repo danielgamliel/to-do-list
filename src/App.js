@@ -10,7 +10,7 @@ function App() {
   setTasks((prevTasks) => prevTasks.map((task) => (task.id === id) ? { ...task, title: newTitle, category: newCategory } : task ));}
   
   return (
-    <div >
+    <div className='app' >
       <h1>To do List</h1>
       <TaskList  onEdit={editTaskById} tasks={tasks} onDelete={deleteTaskById} />
       <TaskCreate onCreate={createTask} action={'create'} />
