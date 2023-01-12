@@ -20,7 +20,6 @@ function TaskCreate({ action,task, onCreate, onEdit }) {
       taskText = taskText.length> 16 ? handleLongText(taskText) : taskText
     if(taskText.length > 2 &&taskCategory!==''){
       action==='create'? onCreate( taskText, taskCategory) : onEdit(task.id, taskText, taskCategory)
-      setValues({})
       e.target.reset()
     }
     };
