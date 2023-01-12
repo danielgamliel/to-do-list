@@ -1,3 +1,128 @@
-.task-class {
-    /* background-color: blue; */
+.app {
+    height: fit-content;
+}
+
+.task-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 20px;
+}
+
+.task-create {
+    width: 50%;
+    padding: 3px;
+    position: fixed;
+    left: 50%;
+    margin-left: -25%;
+    bottom: 10%;
+}
+
+.task-create form {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: bisque;
+}
+
+@media (max-width:1000px) {
+    .app {
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width:720px) {
+    .app {
+        height: fit-content;
+        background: #eb7a7a;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task-list {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .task-show {
+        background-color: #0d70ea;
+    }
+}
+
+.task-show {
+    border: 1px solid gray;
+    flex: 1;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: azure;
+    margin-bottom: 25%;
+    animation: fadeIn 1.3s;
+    position: relative;
+    text-overflow: clip
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+.task-show h3 {
+    font-size: 24px
+}
+
+
+.edit-btn {
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .9em;
+    margin: 5px;
+    padding: 5px 8px;
+    text-align: center;
+    user-select: none;
+    box-sizing: border-box;
+
+}
+
+.delete-btn {
+    background-image: linear-gradient(#eb7a7a, #ff0000);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+    font-size: .9em;
+    padding: 2px 5px;
+    text-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
 }
