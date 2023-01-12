@@ -1,5 +1,5 @@
 .app {
-    height: 800px;
+    height: fit-content;
 }
 
 .task-list {
@@ -20,7 +20,7 @@
 
 .task-create form {
     width: 100%;
-    height: 35px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -30,12 +30,35 @@
     background-color: bisque;
 }
 
+@media (max-width:1000px) {
+    .app {
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .task-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
 @media (max-width:720px) {
+    .app {
+        height: fit-content;
+        background: #eb7a7a;
+        justify-content: center;
+        align-items: center;
+    }
+
     .task-list {
         display: grid;
         grid-template-columns: 1fr;
-        column-gap: 15px;
-        row-gap: 20px;
+    }
+
+    .task-show {
+        background-color: #0d70ea;
     }
 }
 
@@ -49,6 +72,7 @@
     margin-bottom: 25%;
     animation: fadeIn 1.3s;
     position: relative;
+    text-overflow: clip
 }
 
 @keyframes fadeIn {

@@ -10,7 +10,6 @@ function TaskShow({ task, onDelete, onEdit }) {
      onEdit(id, newTitle,newCategory );
     setShowEdit((prev)=>!prev);
   };
-
   let content = <><h3 >{task.title}</h3> <h5>({task.category})</h5></>;
   if (showEdit) content = <TaskCreate action={'edit'} onEdit={handleSubmit} task={task} />
 
