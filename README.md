@@ -1,10 +1,9 @@
-# Long word width breaks the line of the taskShoe component
+# Refine adding or changing task text
 
 
-
-##  When adding long word, more then 300px it goes out of the width of the component
-
-    I have added a function that checks if the text is longer than 17 charecters
-    if so, it will seperate it by line for each 17 charecters
+##  When adding or editing task, the input is just 1 row and its inconvenient
+    To solve this:
+    I replaced the input tag by textarea, now user can handle better long text, 
+    with built-in scroll and doubling the size of the height
  
 
