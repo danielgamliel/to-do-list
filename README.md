@@ -1,21 +1,10 @@
-# This is a To Do List App
-
-This project bulid using JavaScript, React, HTML and CSS.
-
-##  installation
-    No external library necessary, use npm start.
-
-### `Using the app`
-     Add text of the task, then choose a category then click  the Add button.
-
-###  Updates
-    This app updated daily, adding new features and refactoring.
+# Long word width breaks the line of the taskShoe component
 
 
 
- [link to my github page](https://github.com/danielgamliel).
-  [link to my LinkedIn account](https://github.com/danielgamliel).
+##  When adding long word, more then 300px it goes out of the width of the component
 
-
-
+    I have added a function that checks if the text is longer than 17 charecters
+    if so, it will seperate it by line for each 17 charecters
+ 
 
